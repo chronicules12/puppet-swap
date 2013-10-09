@@ -1,0 +1,47 @@
+{
+  "name": "crayfishx-swap",
+  "version": "0.0.1",
+  "source": "http://github.com/crayfishx/puppet-swap",
+  "author": "crayfishx",
+  "license": "Apache License, Version 2.0",
+  "summary": "Type and provider for managing swap",
+  "description": "Create and manage swap paging space sizes.  Currently AIX only.",
+  "project_page": "http://github.com/crayfishx/puppet-swap",
+  "dependencies": [
+
+  ],
+  "types": [
+    {
+      "name": "swap",
+      "doc": "",
+      "properties": [
+        {
+          "name": "size",
+          "doc": "Size in MB specified as nM"
+        }
+      ],
+      "parameters": [
+        {
+          "name": "device",
+          "doc": "Device to create the swap on"
+        }
+      ],
+      "providers": [
+        {
+          "name": "aix",
+          "doc": "Manages swap sizes on AIX\n\nRequired binaries: `chps`.  Default for `operatingsystem` == `AIX`."
+        }
+      ]
+    }
+  ],
+  "checksums": {
+    "Modulefile": "b4e23c0fa3a04ba6757d377cc5c53a79",
+    "README": "5d4998bae095f441d3f7f4ac5cb61c24",
+    "README.md": "dfcb20e2781b9a319c82ab8188bd644a",
+    "lib/puppet/provider/swap/aix.rb": "c2b7d1fcf3f9e3af60191532cfdff377",
+    "lib/puppet/type/swap.rb": "786b88b8b275601b30ca7765ecf50f9b",
+    "manifests/init.pp": "3f3697ad47706972f62ee6235675e203",
+    "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+    "tests/init.pp": "f2e2744f80d9e1776ee409d90323347b"
+  }
+}
