@@ -31,7 +31,7 @@ Puppet::Type.type(:swap).provide :aix do
     Open3.popen3("/usr/sbin/swap -l") do |stdin, stdout, stderr|
       stdout.each do |line|
         larr = line.split(/[\t ]+/)
-        cursize=larr[3].gsub(/MB/,'M') if larr[0] = "/dev/#{@resource[:device]}"
+        cursize=larr[3].gsub(/MB/,'') if larr[0] = "/dev/#{@resource[:device]}"
       end
     end
     return @resource[:size] if strip_unit(cursize) == strip_unit(@resource[:size])
